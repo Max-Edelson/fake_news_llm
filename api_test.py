@@ -12,9 +12,6 @@ df_path_in = join('data','consolodated_text_cleaned.csv')
 df_path_out = join('data','consolodated_text.csv')
 df_path_out_clean = join('data','consolodated_text_cleaned.csv')
 MAX_TEXT_LEN = 100
-
-#os.environ['OPENAI_API_KEY'] = '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'
-
 #df.to_csv(df_path, index=False)
 
 def split_block(output, delim, logging=False):
@@ -92,7 +89,7 @@ def get_api_prompt(df_path):
     df = pd.read_csv(df_path)
     df = df.rename(columns={'instruction': 'input', 'text': 'output'})
     #df = df.sample(frac=1).reset_index(drop=True)
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", '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'))
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", ''))
     df_size = df["output"].size
     cnt = 0
     #found_first = False

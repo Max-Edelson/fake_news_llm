@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 df_path_in = join('data','consolodated_text_cleaned.csv')
 df_path_out = join('data','consolodated_text.csv')
 df_path_out_clean = join('data','consolodated_text_cleaned.csv')
-MAX_TEXT_LEN = 100
+MAX_TEXT_LEN = 128
 #df.to_csv(df_path, index=False)
 
 def split_block(output, delim, logging=False):
